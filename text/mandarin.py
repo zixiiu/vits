@@ -234,7 +234,7 @@ _bopomofo_to_ipa2 = [(re.compile('%s' % x[0]), x[1]) for x in [
 
 
 def number_to_chinese(text):
-    numbers = re.findall(r'\d+(?:\.?\d+)?', text)
+    numbers = re.findall(r'[0-9]+(?:\.?[0-9]+)?', text)
     for number in numbers:
         text = text.replace(number, cn2an.an2cn(number), 1)
     return text
